@@ -1,2 +1,2 @@
 # onnx-models
-ONNX machine learning models for inference
+Java Applications for ONNX model's inference
