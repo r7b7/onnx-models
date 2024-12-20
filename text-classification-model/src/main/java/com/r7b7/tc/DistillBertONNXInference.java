@@ -15,7 +15,7 @@ import ai.onnxruntime.OrtSession;
 public class DistillBertONNXInference {
     public static void main(String[] args) throws OrtException, IOException {
 
-        String modelPath = "path/to/model.onnx";
+        String modelPath = "/Users/prakashr/Documents/codebase/tmp/distilbert-base-uncased-finetuned-sst-2-english/model.onnx";
 
         try (OrtEnvironment env = OrtEnvironment.getEnvironment();
                 OrtSession session = env.createSession(modelPath, new OrtSession.SessionOptions())) {
@@ -25,7 +25,6 @@ public class DistillBertONNXInference {
                     .newInstance("ruvalappil/distilbert-base-uncased-finetuned-sst-2-english-ONNX");
 
             String text = "Hello, how are you?";
-
             Encoding encoding = tokenizer.encode(text);
             long[][] inputIds = { encoding.getIds() }; 
             long[][] attentionMask = { encoding.getAttentionMask() };
