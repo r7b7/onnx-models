@@ -15,7 +15,7 @@ import ai.onnxruntime.OrtSession;
 public class DistillBertONNXInference {
     public static void main(String[] args) throws OrtException, IOException {
 
-        String modelPath = "path/to/model.onnx";
+        String modelPath = "/path/to/model.onnx";
 
         try (OrtEnvironment env = OrtEnvironment.getEnvironment();
                 OrtSession session = env.createSession(modelPath, new OrtSession.SessionOptions())) {
